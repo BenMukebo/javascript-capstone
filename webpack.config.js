@@ -19,7 +19,7 @@ module.exports = {
   ],
 
   output: {
-    filename: './js/index.js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'assets/images/[name][ext]',
     clean: true,
