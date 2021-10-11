@@ -20,41 +20,51 @@
       </nav>
     </header>
 
-    <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <!-- @TODO: Remove this button once we have card items calling from the external api -->
+    <button class="btn-open-popup-modal bg-blue-500 hover:bg-blue-400 p-5 ml-5 my-10 text-white rounded">Show popup</button>
+
+    <!-- popup modal -->
+    <div class="popup-modal hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
       <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
         <!-- makes the modal center -->
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-        <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:p-6 md:max-w-full">
-          <div class="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
-            <button type="button" class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <span class="sr-only">Close</span>
+        <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:p-6 md:max-w-6xl">
+          <div class="absolute top-0 right-0 pt-4 pr-4 mt-3 pl-5">
+            <!-- close modal button -->
+            <button type="button" class="btn-close-popup-modal bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
-            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-              <div>
-                <img src="assets/images/placeholder2.jpg" alt="placeholder 2" class="w-full">
-              </div>
-              <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                Pop up title
-              </h3>
-              <div class="mt-2">
-                <p class="text-sm text-gray-500">
-                  This is brief description
-                </p>
-              </div>
+
+          <!-- modal content section -->
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4">
+            <div class="mx-7 mb-8 bg-blue-400 md-h-30 overflow-hidden">
+              <img src="assets/images/placeholder2.jpg" alt="placeholder 2" class="w-full h-full">
+            </div>
+            <h3 class="text-lg md:text-2xl leading-6 font-medium text-gray-900" id="modal-title">
+              OnePlus signs Shahid & Mira Kapoor as brand ambassadors for its smart TV
+            </h3>
+            <div class="mt-5 md:mt-8 pb-2 border-b-2 border-gray-300 md:mx-7">
+              <p class="text-sm md:text-lg md:text-left text-gray-500">Author: Jon Barris</p>
+              <p class="text-sm md:text-lg md:text-left text-gray-500">Date: 10 Oct 2021, Sunday at 02:37 pm</p>
+            </div>
+            <div class="mt-5 md:mt-8">
+              <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">
+                OnePlus announced Shahid Kapoor and Mira Rajput Kapoor as brand ambassadors for its smart TVs category. Alongside, an ad film for OnePlus TV U1S has been released featuring the couple. The film showcases Shahid and Mira engaging in an interaction that seeks to highlight OnePlus TV's hands-free voice control with Speak Now™️ feature and the product in a quirky take.
+              </p>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
     <footer class="bg-gray-200 p-5 md:p-10 text-center md:text-left">
-        <p class="text-sm md:text-lg pl-5 md:pl-10">Created by Microvse under CC license</p>
+      <p class="text-sm md:text-lg pl-5 md:pl-10">Created by Microvse under CC license</p>
     </footer>
   </body>
 </html>
