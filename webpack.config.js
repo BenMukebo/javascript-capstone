@@ -19,8 +19,9 @@ module.exports = {
   ],
 
   output: {
-    filename: 'main.js',
+    filename: './js/index.js',
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/images/[name][ext]',
     clean: true,
   },
   module: {
@@ -28,6 +29,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
