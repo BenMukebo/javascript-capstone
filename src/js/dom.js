@@ -1,3 +1,5 @@
+import placeholerImageOne from '../assets/images/placeholder2.jpg';
+
 const popupModal = document.querySelector('.popup-modal');
 const btnOpenPopupModal = document.querySelector('.btn-open-popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
@@ -11,7 +13,7 @@ export const modalTrigger = () => {
 export const modalContent = () => {
   modalContentContainer.innerHTML = `
     <div class="mx-7 mb-8 bg-blue-400 md-h-30 overflow-hidden">
-      <img src="assets/images/placeholder2.jpg" alt="placeholder 2" class="w-full h-full">
+      <img src="${placeholerImageOne}" alt="placeholder 2" class="w-full h-full">
     </div>
     <h3 class="text-lg md:text-2xl leading-6 font-medium text-gray-900" id="modal-title">
       OnePlus signs Shahid & Mira Kapoor as brand ambassadors for its smart TV
@@ -24,6 +26,15 @@ export const modalContent = () => {
       <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">
         OnePlus announced Shahid Kapoor and Mira Rajput Kapoor as brand ambassadors for its smart TVs category. Alongside, an ad film for OnePlus TV U1S has been released featuring the couple. The film showcases Shahid and Mira engaging in an interaction that seeks to highlight OnePlus TV's hands-free voice control with Speak Now™️ feature and the product in a quirky take.
       </p>
+    </div>
+    <div class="pt-2 border-t-2 border-gray-300">
+      <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-900">
+        Comments (2)
+      </h4>
+      <ul class="mt-5 md:mt-8 text-left md:mx-48 text-sm md:text-lg text-gray-500 space-y-4">
+        <li><span class="bg-green-200 py-1 px-2 rounded-full text-green-600 font-bold">03/11/2021</span> Ben: I'd love the news</li>
+        <li><span class="bg-green-200 py-1 px-2 rounded-full text-green-600 font-bold">03/11/2021</span> Muhammd: Yeah, it's nice</li>
+      </ul>
     </div>
   `;
 };
