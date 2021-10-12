@@ -1,7 +1,9 @@
 import '../css/styles.css';
-import { modalTrigger, modalContent } from './dom.js';
+import { modalTrigger } from './dom.js';
+import { getResponse } from './api.js';
 
 window.onload = () => {
   modalTrigger();
-  modalContent();
+  // modalContent();
+  getResponse();
 };

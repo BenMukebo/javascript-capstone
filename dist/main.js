@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n}\n\n@media (min-width: 768px) {\n  .md-h-30 {\n    height: 30rem;\n  }\n}\n", "",{"version":3,"sources":["webpack://./src/css/styles.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;AACZ;;AAEA;EACE;IACE,aAAa;EACf;AACF","sourcesContent":["* {\n  margin: 0;\n  padding: 0;\n}\n\n@media (min-width: 768px) {\n  .md-h-30 {\n    height: 30rem;\n  }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --primary: rgb(71, 69, 69);\n  --secondary: #ccc;\n  --border: rgb(221, 219, 219);\n  --background: rgb(243, 243, 243);\n}\n\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n.d-flex {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\nsection .lists {\n width: 100%;\n flex-direction: column;\n}\n\nsection .list-item {\n  flex-direction: column;\n  max-width: 440px;\n  /* height: 480px; */\n  padding: 1rem;\n  margin: 3px;\n  background-color: rgb(138, 163, 185);\n}\n\n.list-item .image {\n  width: 100%;\n  height: 250px;\n}\n\n.list-item .image img{\n  width: 100%;\n  height: 100%;\n}\n\n.list-item .body{\n  justify-content: space-between;\n  align-items: flex-start;\n  width: 100%;\n  height: 130px;\n  padding: 1rem 0;\n}\n\n\n.list-item .body h3{\n  width: 80%;\n}\n\n\n.list-item .commentBtn{\n  width: 100%;\n  text-align: center;\n}\n\n.commentBtn button{\n  padding: 0.3rem 3rem;\n  border: 3px solid var(--primary);\n  border-radius: 2px;\n}\n\n\n\n\n@media (min-width: 768px) {\n  .md-h-30 {\n    height: 30rem;\n  }\n\n  section .lists {\n    width: 100%;\n    flex-direction: row;\n    flex-wrap: wrap;\n   }\n   \n   section .list-item {\n     flex-direction: column;\n     max-width: 370px;\n     height: 400px;\n     padding: 1rem;\n     margin: 3px 0;\n     background-color: rgb(138, 163, 185);\n   }\n\n   .list-item .image {\n    width: 100%;\n    height: 230px;\n  }\n}\n", "",{"version":3,"sources":["webpack://./src/css/styles.css"],"names":[],"mappings":"AAAA;EACE,0BAA0B;EAC1B,iBAAiB;EACjB,4BAA4B;EAC5B,gCAAgC;AAClC;;;AAGA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;CACC,WAAW;CACX,sBAAsB;AACvB;;AAEA;EACE,sBAAsB;EACtB,gBAAgB;EAChB,mBAAmB;EACnB,aAAa;EACb,WAAW;EACX,oCAAoC;AACtC;;AAEA;EACE,WAAW;EACX,aAAa;AACf;;AAEA;EACE,WAAW;EACX,YAAY;AACd;;AAEA;EACE,8BAA8B;EAC9B,uBAAuB;EACvB,WAAW;EACX,aAAa;EACb,eAAe;AACjB;;;AAGA;EACE,UAAU;AACZ;;;AAGA;EACE,WAAW;EACX,kBAAkB;AACpB;;AAEA;EACE,oBAAoB;EACpB,gCAAgC;EAChC,kBAAkB;AACpB;;;;;AAKA;EACE;IACE,aAAa;EACf;;EAEA;IACE,WAAW;IACX,mBAAmB;IACnB,eAAe;GAChB;;GAEA;KACE,sBAAsB;KACtB,gBAAgB;KAChB,aAAa;KACb,aAAa;KACb,aAAa;KACb,oCAAoC;GACtC;;GAEA;IACC,WAAW;IACX,aAAa;EACf;AACF","sourcesContent":[":root {\n  --primary: rgb(71, 69, 69);\n  --secondary: #ccc;\n  --border: rgb(221, 219, 219);\n  --background: rgb(243, 243, 243);\n}\n\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n.d-flex {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\nsection .lists {\n width: 100%;\n flex-direction: column;\n}\n\nsection .list-item {\n  flex-direction: column;\n  max-width: 440px;\n  /* height: 480px; */\n  padding: 1rem;\n  margin: 3px;\n  background-color: rgb(138, 163, 185);\n}\n\n.list-item .image {\n  width: 100%;\n  height: 250px;\n}\n\n.list-item .image img{\n  width: 100%;\n  height: 100%;\n}\n\n.list-item .body{\n  justify-content: space-between;\n  align-items: flex-start;\n  width: 100%;\n  height: 130px;\n  padding: 1rem 0;\n}\n\n\n.list-item .body h3{\n  width: 80%;\n}\n\n\n.list-item .commentBtn{\n  width: 100%;\n  text-align: center;\n}\n\n.commentBtn button{\n  padding: 0.3rem 3rem;\n  border: 3px solid var(--primary);\n  border-radius: 2px;\n}\n\n\n\n\n@media (min-width: 768px) {\n  .md-h-30 {\n    height: 30rem;\n  }\n\n  section .lists {\n    width: 100%;\n    flex-direction: row;\n    flex-wrap: wrap;\n   }\n   \n   section .list-item {\n     flex-direction: column;\n     max-width: 370px;\n     height: 400px;\n     padding: 1rem;\n     margin: 3px 0;\n     background-color: rgb(138, 163, 185);\n   }\n\n   .list-item .image {\n    width: 100%;\n    height: 230px;\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -530,6 +530,45 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/js/api.js":
+/*!***********************!*\
+  !*** ./src/js/api.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getResponse": () => (/* binding */ getResponse)
+/* harmony export */ });
+/* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom.js */ "./src/js/dom.js");
+
+
+
+const url = 'https://inshortsapi.vercel.app/news?category=technology';
+
+// const getResponse = async () => {
+//     try {
+//       const get = await fetch(url);
+//       const response = await get.json();
+//       return response.data;
+//     } catch (error) {
+//       throw new Error(error.message);
+//     }
+//   };
+  
+//   export default getResponse;
+
+
+  const getResponse = async () => {
+    const get = await fetch(url);
+    const response = await get.json();
+    (0,_dom_js__WEBPACK_IMPORTED_MODULE_0__.renderNews)(response.data);
+    (0,_dom_js__WEBPACK_IMPORTED_MODULE_0__.modalContent)(response.data);
+  };
+  
+
+/***/ }),
+
 /***/ "./src/js/dom.js":
 /*!***********************!*\
   !*** ./src/js/dom.js ***!
@@ -539,7 +578,8 @@ module.exports = styleTagTransform;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "modalTrigger": () => (/* binding */ modalTrigger),
-/* harmony export */   "modalContent": () => (/* binding */ modalContent)
+/* harmony export */   "modalContent": () => (/* binding */ modalContent),
+/* harmony export */   "renderNews": () => (/* binding */ renderNews)
 /* harmony export */ });
 /* harmony import */ var _assets_images_placeholder2_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/images/placeholder2.jpg */ "./src/assets/images/placeholder2.jpg");
 
@@ -554,8 +594,12 @@ const modalTrigger = () => {
   btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
 };
 
-const modalContent = () => {
-  modalContentContainer.innerHTML = `
+const modalContent = (dataNews) => {
+  const div = document.createElement('div');
+  // div.id = ${dataNews.time};
+  div.classList.add('popup-modal');
+
+  div.innerHTML = `
     <div class="mx-7 mb-8 bg-blue-400 md-h-30 overflow-hidden">
       <img src="${_assets_images_placeholder2_jpg__WEBPACK_IMPORTED_MODULE_0__}" alt="placeholder 2" class="w-full h-full">
     </div>
@@ -570,10 +614,49 @@ const modalContent = () => {
       <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">
         OnePlus announced Shahid Kapoor and Mira Rajput Kapoor as brand ambassadors for its smart TVs category. Alongside, an ad film for OnePlus TV U1S has been released featuring the couple. The film showcases Shahid and Mira engaging in an interaction that seeks to highlight OnePlus TV's hands-free voice control with Speak Now™️ feature and the product in a quirky take.
       </p>
-    </div>
-  `;
+    </div>`;
+    modalContentContainer.appendChild(div);
 };
 
+const container = document.querySelector('.lists');
+
+const renderNews = (dataNews) => {
+  container.innerHTML = '';
+  dataNews.forEach((data) => {
+    const li = document.createElement('li');
+    li.classList.add('list-item', 'd-flex');
+    li.innerHTML = `
+    <div class="image">
+      <img src=${data.imageUrl} alt=${data.time}>
+    </div>
+    <div class="body d-flex">
+      <h3>${data.title}</h3>
+      <div class="like-news">
+        <button>
+          <span class="material-icons">favorite_border</span>
+        </button>
+        <p><span data-id="likes"></span> Likes</p>
+      </div>
+    </div>
+    <div class="comntBtn">
+      <button id=${data.time}>Comment</button>
+    </div> `;
+    container.appendChild(li);
+  });
+};
+
+// const modalCard = document.querySelector('.popup-modal-content-container .popup-modal');
+// const buttons = document.querySelectorAll('.comntBtn button');
+// console.log("fsdgsgdsgd", modalCard);
+// buttons.forEach((button, index) => {
+//   button.addEventListener('click', () => {
+//     console.log("fsdgsgdsgd", button);
+//     if (index.time.id === button.id) {
+//       const popupCard = createPopup(project);
+//       popupContainer.appendChild(popupCard);
+//     }
+//   });
+// });
 
 /***/ }),
 
@@ -696,12 +779,15 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/styles.css */ "./src/css/styles.css");
 /* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom.js */ "./src/js/dom.js");
+/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api.js */ "./src/js/api.js");
+
 
 
 
 window.onload = () => {
   (0,_dom_js__WEBPACK_IMPORTED_MODULE_1__.modalTrigger)();
-  (0,_dom_js__WEBPACK_IMPORTED_MODULE_1__.modalContent)();
+  // modalContent();
+  (0,_api_js__WEBPACK_IMPORTED_MODULE_2__.getResponse)();
 };
 })();
 
