@@ -20,19 +20,17 @@
 section .lists {
   width: 100%;
   flex-direction: column;
+  padding: 50px 10px;
   background-color: var(--background);
 }
 
 section .list-item {
   flex-direction: column;
   max-width: 440px;
-
-  /* height: 480px; */
   padding: 1rem;
-  margin: 5px;
-
-  /* background-color: rgb(138, 163, 185); */
-  box-shadow: 0 0 10px 1px var(--primary);
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgb(165, 165, 165);
 }
 
 .list-item .image {
@@ -68,10 +66,6 @@ section .list-item {
   border-radius: 2px;
 }
 
-/* Use clip art later */
-
-/* clip-path: polygon(23% 0, 100% 0%, 100% 100%, 24% 100%, 24% 61%, 0 50%, 23% 34%); */
-
 @media (min-width: 768px) {
   .md-h-30 {
     height: 30rem;
@@ -81,13 +75,14 @@ section .list-item {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 50px 10px;
   }
 
   section .list-item {
     flex-direction: column;
     max-width: 370px;
     height: 400px;
-    margin: 5px;
+    margin: 20px;
   }
 
   .list-item .image {

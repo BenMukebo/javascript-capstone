@@ -3,7 +3,7 @@ import { getResponse } from './api.js';
 import { modalTrigger, renderModalContent } from './dom.js';
 
 window.onload = () => {
-  modalTrigger();
-  renderModalContent();
   getResponse();
+  renderModalContent();
+  modalTrigger();
 };

@@ -1,14 +1,10 @@
 import placeholerImage from '../assets/images/placeholder2.jpg';
 
 const popupModal = document.querySelector('.popup-modal');
-const btnOpenPopupModal = document.querySelector('.btn-open-popup-modal');
+// const btnOpenPopupModal = document.querySelector('.btn-open-popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
 const modalContentContainer = document.querySelector('.popup-modal-content-container');
-
-export const modalTrigger = () => {
-  btnOpenPopupModal.addEventListener('click', () => popupModal.classList.remove('hidden'));
-  btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
-};
+const container = document.querySelector('.lists');
 
 const renderComments = () => `
   <div class="my-5 md:my-8 pt-2 border-t-2 border-gray-200">
@@ -68,8 +64,6 @@ export const renderModalContent = () => {
   `;
 };
 
-const container = document.querySelector('.lists');
-
 export const renderNews = (dataNews) => {
   container.innerHTML = '';
   dataNews.forEach((data) => {
@@ -89,8 +83,22 @@ export const renderNews = (dataNews) => {
         </div>
       </div>
       <div class="comntBtn">
-        <button>Comment</button>
+        <button class="item-comment-button">Comment</button>
       </div>`;
     container.appendChild(li);
   });
+};
+
+export const modalTrigger = () => {
+  const listItem = container.children;
+
+  Array.from(listItem).forEach((item) => {
+    // console.log(item);
+    item.addEventListener('click', () => {
+      console.log(item);
+    });
+  });
+
+  // btnOpenPopupModal.addEventListener('click', () => popupModal.classList.remove('hidden'));
+  btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
 };
