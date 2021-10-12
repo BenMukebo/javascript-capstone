@@ -8,8 +8,12 @@ export const modalTrigger = () => {
   btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
 };
 
-export const modalContent = () => {
-  modalContentContainer.innerHTML = `
+export const modalContent = (dataNews) => {
+  const div = document.createElement('div');
+  // div.id = ${dataNews.time};
+  div.classList.add('popup-modal');
+
+  div.innerHTML = `
     <div class="mx-7 mb-8 bg-blue-400 md-h-30 overflow-hidden">
       <img src="assets/images/placeholder2.jpg" alt="placeholder 2" class="w-full h-full">
     </div>
@@ -24,8 +28,8 @@ export const modalContent = () => {
       <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">
         OnePlus announced Shahid Kapoor and Mira Rajput Kapoor as brand ambassadors for its smart TVs category. Alongside, an ad film for OnePlus TV U1S has been released featuring the couple. The film showcases Shahid and Mira engaging in an interaction that seeks to highlight OnePlus TV's hands-free voice control with Speak Now™️ feature and the product in a quirky take.
       </p>
-    </div>
-  `;
+    </div>`;
+    modalContentContainer.appendChild(div);
 };
 
 const container = document.querySelector('.lists');
@@ -48,9 +52,22 @@ export const renderNews = (dataNews) => {
         <p><span data-id="likes"></span> Likes</p>
       </div>
     </div>
-    <div class="commentBtn">
-      <button id="">Comment</button>
+    <div class="comntBtn">
+      <button id=${data.time}>Comment</button>
     </div> `;
     container.appendChild(li);
   });
 };
+
+// const modalCard = document.querySelector('.popup-modal-content-container .popup-modal');
+// const buttons = document.querySelectorAll('.comntBtn button');
+// console.log("fsdgsgdsgd", modalCard);
+// buttons.forEach((button, index) => {
+//   button.addEventListener('click', () => {
+//     console.log("fsdgsgdsgd", button);
+//     if (index.time.id === button.id) {
+//       const popupCard = createPopup(project);
+//       popupContainer.appendChild(popupCard);
+//     }
+//   });
+// });

@@ -8,6 +8,8 @@
       rel="stylesheet"
     />
     <title>MoTech News</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
   <script defer src="main.js"></script></head>
   <body>
     <header class="bg-white">
@@ -19,6 +21,11 @@
         </ul>
       </nav>
     </header>
+
+    <main>
+      <section class="home">
+        <ul class="lists d-flex"></ul>
+      </section>
 
     <!-- @TODO: Remove this button once we have card items calling from the external api -->
     <button type="button" class="btn-open-popup-modal bg-blue-500 hover:bg-blue-400 p-5 ml-5 my-10 text-white rounded">Show popup</button>
@@ -42,10 +49,13 @@
           </div>
 
           <!-- modal content section -->
-          <div class="mt-3 text-center sm:mt-0 sm:ml-4 popup-modal-content-container"></div>
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 popup-modal-content-container">
+
+          </div>
         </div>
       </div>
     </div>
+  </main>
 
     <footer class="bg-gray-200 p-5 md:p-10 text-center md:text-left">
       <p class="text-sm md:text-lg pl-5 md:pl-10">Created by Microvse under CC license</p>

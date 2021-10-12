@@ -15,11 +15,13 @@
   },
   "keywords": [],
   "author": "Ben Mukebo",
-  "contributors": [{
-    "name" : "Muhammad Sesay",
-    "email" : "contact@maej.dev",
-    "url" : "http://github.com/mmsesay"
-  }],
+  "contributors": [
+    {
+      "name": "Muhammad Sesay",
+      "email": "contact@maej.dev",
+      "url": "http://github.com/mmsesay"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BenMukebo/javascript-capstone/issues"

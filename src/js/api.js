@@ -1,4 +1,4 @@
-import { renderNews } from './dom.js';
+import { renderNews, modalContent } from './dom.js';
 
 
 const url = 'https://inshortsapi.vercel.app/news?category=technology';
@@ -20,5 +20,6 @@ const url = 'https://inshortsapi.vercel.app/news?category=technology';
     const get = await fetch(url);
     const response = await get.json();
     renderNews(response.data);
+    modalContent(response.data);
   };
   
