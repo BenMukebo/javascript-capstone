@@ -1,6 +1,71 @@
+:root {
+  --primary: rgb(71, 69, 69);
+  --secondary: #ccc;
+  --border: rgb(221, 219, 219);
+  --background: rgb(243, 243, 243);
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section .lists {
+  width: 100%;
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+section .list-item {
+  flex-direction: column;
+  max-width: 440px;
+
+  /* height: 480px; */
+  padding: 1rem;
+  margin: 5px;
+
+  /* background-color: rgb(138, 163, 185); */
+  box-shadow: 0 0 10px 1px var(--primary);
+}
+
+.list-item .image {
+  width: 100%;
+  height: 250px;
+}
+
+.list-item .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.list-item .body {
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 130px;
+  padding: 1rem 0;
+}
+
+.list-item .body h3 {
+  width: 80%;
+}
+
+.list-item .comntBtn {
+  width: 100%;
+  text-align: center;
+}
+
+.comntBtn button {
+  padding: 0.3rem 3rem;
+  border: 3px solid var(--primary);
+  border-radius: 2px;
 }
 
 /* Use clip art later */
@@ -10,5 +75,23 @@
 @media (min-width: 768px) {
   .md-h-30 {
     height: 30rem;
+  }
+
+  section .lists {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  section .list-item {
+    flex-direction: column;
+    max-width: 370px;
+    height: 400px;
+    margin: 5px;
+  }
+
+  .list-item .image {
+    width: 100%;
+    height: 230px;
   }
 }
