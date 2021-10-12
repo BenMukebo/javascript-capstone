@@ -1,4 +1,4 @@
-import placeholerImageOne from '../assets/images/placeholder2.jpg';
+import placeholerImage from '../assets/images/placeholder2.jpg';
 
 const popupModal = document.querySelector('.popup-modal');
 const btnOpenPopupModal = document.querySelector('.btn-open-popup-modal');
@@ -32,7 +32,7 @@ const renderComments = () => `
 export const renderModalContent = () => {
   modalContentContainer.innerHTML = `
     <div class="mx-7 mb-8 bg-blue-400 md-h-30 overflow-hidden">
-      <img src="${placeholerImageOne}" alt="placeholder 2" class="w-full h-full">
+      <img src="${placeholerImage}" alt="placeholder 2" class="w-full h-full">
     </div>
     <h3 class="text-lg md:text-2xl leading-6 font-medium text-gray-900" id="modal-title">
       OnePlus signs Shahid & Mira Kapoor as brand ambassadors for its smart TV
