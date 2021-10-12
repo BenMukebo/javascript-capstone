@@ -21,6 +21,7 @@
 section .lists {
  width: 100%;
  flex-direction: column;
+ background-color: var(--background);
 }
 
 section .list-item {
@@ -28,8 +29,9 @@ section .list-item {
   max-width: 440px;
   /* height: 480px; */
   padding: 1rem;
-  margin: 3px;
+  margin: 5px;
   /* background-color: rgb(138, 163, 185); */
+  box-shadow: 0 0 10px 1px var(--primary);
 }
 
 .list-item .image {
@@ -50,18 +52,17 @@ section .list-item {
   padding: 1rem 0;
 }
 
-
 .list-item .body h3{
   width: 80%;
 }
 
 
-.list-item .commentBtn{
+.list-item .comntBtn{
   width: 100%;
   text-align: center;
 }
 
-.commentBtn button{
+.comntBtn button{
   padding: 0.3rem 3rem;
   border: 3px solid var(--primary);
   border-radius: 2px;
@@ -85,9 +86,7 @@ section .list-item {
      flex-direction: column;
      max-width: 370px;
      height: 400px;
-     padding: 1rem;
-     margin: 3px 0;
-     background-color: rgb(138, 163, 185);
+     margin: 5px;
    }
 
    .list-item .image {

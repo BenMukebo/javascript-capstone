@@ -53,7 +53,7 @@ export const renderNews = (dataNews) => {
       </div>
     </div>
     <div class="comntBtn">
-      <button id=${data.time}>Comment</button>
+      <button>Comment</button>
     </div> `;
     container.appendChild(li);
   });
