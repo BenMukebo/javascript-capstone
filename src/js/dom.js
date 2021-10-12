@@ -27,3 +27,29 @@ export const modalContent = () => {
     </div>
   `;
 };
+
+const container = document.querySelector('.lists');
+
+export const renderNews = (dataNews) => {
+  container.innerHTML = '';
+  dataNews.forEach((data) => {
+    const li = document.createElement('li');
+    li.classList.add('list-item', 'd-flex');
+    li.innerHTML = `
+    <div class="image">
+      <img src=${data.imageUrl} alt=${data.time}>
+    </div>
+    <div class="body d-flex">
+      <h3>${data.title}</h3>
+      <div class="like-news">
+        <button>
+          <span class="material-icons">favorite_border</span>
+        </button>
+        <p><span data-id="likes"></span> Likes</p>
+      </div>
+    </div>
+    <div class="commentBtn">
+      <button id="">Comment</button>
+    </div> `;
+  });
+};
