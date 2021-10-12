@@ -1,7 +1,7 @@
 import '../css/styles.css';
-import { modalTrigger, modalContent } from './dom.js';
+import { modalTrigger, renderModalContent } from './dom.js';
 
 window.onload = () => {
   modalTrigger();
-  modalContent();
+  renderModalContent();
 };

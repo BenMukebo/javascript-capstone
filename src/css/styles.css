@@ -3,6 +3,8 @@
   padding: 0;
 }
 
+/* clip-path: polygon(23% 0, 100% 0%, 100% 100%, 24% 100%, 24% 61%, 0 50%, 23% 34%); */
+
 @media (min-width: 768px) {
   .md-h-30 {
     height: 30rem;
