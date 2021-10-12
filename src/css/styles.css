@@ -2,3 +2,9 @@
   margin: 0;
   padding: 0;
 }
+
+@media (min-width: 768px) {
+  .md-h-30 {
+    height: 30rem;
+  }
+}
