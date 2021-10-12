@@ -51,5 +51,6 @@ export const renderNews = (dataNews) => {
     <div class="commentBtn">
       <button id="">Comment</button>
     </div> `;
+    container.appendChild(li);
   });
 };
