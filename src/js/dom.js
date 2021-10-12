@@ -8,7 +8,7 @@ export const modalTrigger = () => {
   btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
 };
 
-export const modalContent = (dataNews) => {
+export const modalContent = () => {
   const div = document.createElement('div');
   // div.id = ${dataNews.time};
   div.classList.add('popup-modal');
@@ -29,7 +29,7 @@ export const modalContent = (dataNews) => {
         OnePlus announced Shahid Kapoor and Mira Rajput Kapoor as brand ambassadors for its smart TVs category. Alongside, an ad film for OnePlus TV U1S has been released featuring the couple. The film showcases Shahid and Mira engaging in an interaction that seeks to highlight OnePlus TV's hands-free voice control with Speak Now™️ feature and the product in a quirky take.
       </p>
     </div>`;
-    modalContentContainer.appendChild(div);
+  modalContentContainer.appendChild(div);
 };
 
 const container = document.querySelector('.lists');
