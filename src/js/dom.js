@@ -30,11 +30,7 @@ const renderComments = () => `
   </div>`;
 
 export const renderModalContent = () => {
-  const div = document.createElement('div');
-  // div.id = ${dataNews.time};
-  div.classList.add('popup-modal');
-
-  div.innerHTML = `
+  modalContentContainer.innerHTML += `
     <div class="mx-7 mb-8 bg-blue-400 md-h-30 overflow-hidden">
       <img src="${placeholerImage}" alt="placeholder 2" class="w-full h-full">
     </div>
@@ -49,8 +45,8 @@ export const renderModalContent = () => {
       <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">
         OnePlus announced Shahid Kapoor and Mira Rajput Kapoor as brand ambassadors for its smart TVs category. Alongside, an ad film for OnePlus TV U1S has been released featuring the couple. The film showcases Shahid and Mira engaging in an interaction that seeks to highlight OnePlus TV's hands-free voice control with Speak Now™️ feature and the product in a quirky take.
       </p>
-    </div>`;
-  modalContentContainer.appendChild(div);
+    </div>
+    ${renderComments()}`;
 };
 
 const container = document.querySelector('.lists');
@@ -61,36 +57,21 @@ export const renderNews = (dataNews) => {
     const li = document.createElement('li');
     li.classList.add('list-item', 'd-flex');
     li.innerHTML = `
-    <div class="image">
-      <img src=${data.imageUrl} alt=${data.time}>
-    </div>
-    <div class="body d-flex">
-      <h3>${data.title}</h3>
-      <div class="like-news">
-        <button>
-          <span class="material-icons">favorite_border</span>
-        </button>
-        <p><span data-id="likes"></span> Likes</p>
+      <div class="image">
+        <img src=${data.imageUrl} alt=${data.time}>
       </div>
-    </div>
-    ${renderComments()}
-  `;
-    <div class="comntBtn">
-      <button>Comment</button>
-    </div> `;
+      <div class="body d-flex">
+        <h3>${data.title}</h3>
+        <div class="like-news">
+          <button>
+            <span class="material-icons">favorite_border</span>
+          </button>
+          <p><span data-id="likes"></span> Likes</p>
+        </div>
+      </div>
+      <div class="comntBtn">
+        <button>Comment</button>
+      </div>`;
     container.appendChild(li);
   });
 };
-
-// const modalCard = document.querySelector('.popup-modal-content-container .popup-modal');
-// const buttons = document.querySelectorAll('.comntBtn button');
-// console.log("fsdgsgdsgd", modalCard);
-// buttons.forEach((button, index) => {
-//   button.addEventListener('click', () => {
-//     console.log("fsdgsgdsgd", button);
-//     if (index.time.id === button.id) {
-//       const popupCard = createPopup(project);
-//       popupContainer.appendChild(popupCard);
-//     }
-//   });
-// });
