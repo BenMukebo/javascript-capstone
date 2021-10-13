@@ -1,7 +1,6 @@
 import placeholerImage from '../assets/images/placeholder2.jpg';
 
 const popupModal = document.querySelector('.popup-modal');
-// const btnOpenPopupModal = document.querySelector('.btn-open-popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
 const modalContentContainer = document.querySelector('.popup-modal-content-container');
 const container = document.querySelector('.lists');
@@ -42,6 +41,13 @@ const renderCommentForm = () => `
   </div>
 `;
 
+const modalTrigger = (element) => {
+  const btnOpenPopupModal = element.childNodes[5].childNodes[1];
+
+  btnOpenPopupModal.addEventListener('click', () => popupModal.classList.remove('hidden'));
+  btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
+};
+
 export const renderModalContent = () => {
   modalContentContainer.innerHTML += `
     <div class="mx-7 mb-8 bg-blue-400 md-h-30 overflow-hidden">
@@ -65,7 +71,6 @@ export const renderModalContent = () => {
 };
 
 export const renderNews = (dataNews) => {
-  container.innerHTML = '';
   dataNews.forEach((data) => {
     const li = document.createElement('li');
     li.classList.add('list-item', 'd-flex');
@@ -85,20 +90,7 @@ export const renderNews = (dataNews) => {
       <div class="comntBtn">
         <button class="item-comment-button">Comment</button>
       </div>`;
-    container.appendChild(li);
+    container.append(li);
+    modalTrigger(li);
   });
-};
-
-export const modalTrigger = () => {
-  const listItem = container.children;
-
-  Array.from(listItem).forEach((item) => {
-    // console.log(item);
-    item.addEventListener('click', () => {
-      console.log(item);
-    });
-  });
-
-  // btnOpenPopupModal.addEventListener('click', () => popupModal.classList.remove('hidden'));
-  btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
 };
