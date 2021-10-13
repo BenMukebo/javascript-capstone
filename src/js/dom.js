@@ -79,7 +79,7 @@ export const renderNews = (dataNews) => {
         <img src=${data.imageUrl} alt=${data.time}>
       </div>
       <div class="body d-flex">
-        <h3>${data.title}</h3>
+        <h3>${data.title.slice(0, 60)}...</h3>
         <div class="like-news">
           <button>
             <span class="material-icons">favorite_border</span>
