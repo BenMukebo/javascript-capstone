@@ -51,5 +51,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - microverseinc for the readme template
-- [Inshortsapi API service.](https://github.com/cyberboysumanjay/Inshorts-News-API)
+- [Spaceflights API service.](https://api.spaceflightnewsapi.net/v3/documentation#)
 - [Involvement API Service](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270)
