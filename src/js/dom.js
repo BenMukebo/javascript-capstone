@@ -1,7 +1,16 @@
+// import _ from 'lodash';
+import { postComment } from "./api.js";
+
 const popupModal = document.querySelector('.popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
 const modalContentContainer = document.querySelector('.popup-modal-content-container');
 const container = document.querySelector('.lists');
+
+export const showMessage = (message) => {
+  const form = document.querySelector('form');
+  const messageText = form.childNodes[1];
+  messageText.innerHTML = message;
+};
 
 const renderComments = () => `
   <div class="my-5 md:my-8 pt-2 border-t-2 border-gray-200">
@@ -32,12 +41,35 @@ const renderCommentForm = () => `
       Add a comment
     </h4>
     <form action="#" method="POST" class="flex flex-col bg-gray-200 px-8 md:px-32 lg:px-52 xl:px-64 md:pt-5">
-      <input type="text" placeholder="Your name" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400" />
-      <textarea type="text" placeholder="Your insights" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"></textarea>
-      <button class="bg-transparent focus:outline-none border border-2 border-blue-400 hover:bg-blue-500 hover:text-white text-gray-500 w-32 h-10 rounded-tr-full rounded-bl-full shadow-3xl my-3" type="button">Comment</button>
+      <p id="alertMessage">Message: </p>
+      <input type="text" id="commenterName" placeholder="Your name" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400" />
+      <textarea type="text" id="commenterMessage" placeholder="Your insights" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"></textarea>
+      <button class="bg-transparent focus:outline-none border border-2 border-blue-400 hover:bg-blue-500 hover:text-white text-gray-500 w-32 h-10 rounded-tr-full rounded-bl-full shadow-3xl my-3 submit-comment" type="button">Comment</button>
     </form>
   </div>
 `;
+
+const submitComment = (newsId) => {
+  const form = document.querySelector('form');
+  const commenterName = form.childNodes[3];
+  const commenterMessage = form.childNodes[5];
+  const formButton = form.childNodes[7];
+
+  formButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if (commenterName.value && commenterMessage.value !== '') {
+      const newComment = {
+        item_id: newsId,
+        username: commenterName.value,
+        comment: commenterMessage.value,
+      };
+
+      postComment(newComment)
+    } else {
+      showMessage('All input field are required');
+    }
+  });
+};
 
 const renderModalContent = (data) => {
   modalContentContainer.innerHTML = `
@@ -57,6 +89,7 @@ const renderModalContent = (data) => {
     ${renderComments()}
     ${renderCommentForm()}
   `;
+  submitComment(data.id);
 };
 
 const modalTrigger = (element, data) => {
