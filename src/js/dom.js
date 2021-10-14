@@ -38,7 +38,7 @@ const renderCommentForm = () => `
     <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-500">
       Add a comment
     </h4>
-    <form action="#" method="POST" class="flex flex-col bg-gray-200 px-8 md:px-32 lg:px-52 xl:px-64 md:pt-5">
+    <form action="#" method="POST" class="flex flex-col bg-gray-300 px-8 md:px-10 lg:px-48 xl:px-64 md:pt-5">
       <p id="alertMessage">Message: </p>
       <input type="text" id="commenterName" placeholder="Your name" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400" />
       <textarea type="text" id="commenterMessage" placeholder="Your insights" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"></textarea>

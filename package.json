@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "type": "module",
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack",
-    "test": "jest --watch"
+    "test": "jest --watch --coverage --testPathPattern=__tests__/"
   },
   "repository": {
     "type": "git",
