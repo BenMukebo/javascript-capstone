@@ -16,8 +16,10 @@ export const showMessage = (message) => {
 
 export const renderComments = (commentsArray) => {
   if (commentsArray && commentsArray.length > 0) {
+    const commentsCounterDiv = modalContentContainer.childNodes[9].childNodes[1];
     const commentsSection = modalContentContainer.childNodes[9].childNodes[3];
     commentsSection.innerHTML = '';
+    commentsCounterDiv.innerHTML = `Comments (${commentsArray.length})`;
 
     commentsArray.forEach((object) => {
       commentsSection.innerHTML += `<div class="flex flex-wrap justify-start">
@@ -91,9 +93,7 @@ const renderModalContent = (data) => {
       <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">${data.content}</p>
     </div>
     <div class="my-5 md:my-8 pt-2 border-t-2 border-gray-200 comment-sections">
-      <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-500">
-        Comments (2)
-      </h4>
+      <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-500"></h4>
       <div class="mt-5 md:mt-8 text-left mx-3 md:mx-5 lg:mx-10 text-sm md:text-lg text-gray-500 space-y-4"></div>
     </div>
     ${renderCommentForm()}
