@@ -1,5 +1,5 @@
 // import _ from 'lodash';
-import { postComment } from './api.js';
+import { postComment, getComments } from './api.js';
 
 const popupModal = document.querySelector('.popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
@@ -12,28 +12,22 @@ export const showMessage = (message) => {
   messageText.innerHTML = message;
 };
 
-const renderComments = () => `
-  <div class="my-5 md:my-8 pt-2 border-t-2 border-gray-200">
-      <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-500">
-        Comments (2)
-      </h4>
-      <div class="mt-5 md:mt-8 text-left mx-3 md:mx-5 lg:mx-10 text-sm md:text-lg text-gray-500 space-y-4">
-        <div class="flex flex-wrap justify-start">
+export const renderComments = (commentsArray) => {
+  if (commentsArray && commentsArray.length > 0) {
+    const commentsSection = modalContentContainer.childNodes[9].childNodes[3];
+    commentsSection.innerHTML = '';
+
+    commentsArray.forEach((object) => {
+      commentsSection.innerHTML += `<div class="flex flex-wrap justify-start">
           <div class="flex items-center mb-1">
-            <p class="bg-blue-200 text-green-600 py-1 px-2 font-bold">03/11/2021</p>
-            <p class="bg-blue-200 text-blue-500 py-1 px-2 font-bold rounded-tr-full rounded-br-full">Ben:</p>
+            <p class="bg-blue-200 text-green-600 py-1 px-2 font-bold flex flex-wrap">${object.creation_date.replaceAll('-', '/')}</p>
+            <p class="bg-blue-200 text-blue-500 py-1 px-2 font-bold rounded-tr-full rounded-br-full flex flex-wrap">${object.username}</p>
           </div>
-          <p class="py-1 px-4 font-normal text-justify">I'd love the news</p>
-        </div>
-        <div class="flex flex-wrap justify-start">
-          <div class="flex items-center mb-1">
-            <p class="bg-blue-200 text-green-600 py-1 px-2 font-bold">03/11/2021</p>
-            <p class="bg-blue-200 text-blue-500 py-1 px-2 font-bold rounded-tr-full rounded-br-full">Muhammad:</p>
-          </div>
-          <p class="py-1 px-4 font-normal text-justify">Yeah it's cool</p>
-        </div>
-      </div>
-  </div>`;
+          <p class="py-1 px-4 font-normal text-justify">${object.comment}</p>
+        </div>`;
+    });
+  }
+};
 
 const renderCommentForm = () => `
   <div class="my-5 md:my-8 pt-2 border-t-2 border-gray-200">
@@ -49,6 +43,12 @@ const renderCommentForm = () => `
   </div>
 `;
 
+const resetInputFields = (args) => {
+  args.forEach((arg) => {
+    arg.value = '';
+  });
+};
+
 const submitComment = (newsId) => {
   const form = document.querySelector('form');
   const commenterName = form.childNodes[3];
@@ -59,14 +59,16 @@ const submitComment = (newsId) => {
     e.preventDefault();
     if (commenterName.value && commenterMessage.value !== '') {
       const newComment = {
-        item_id: newsId,
+        item_id: newsId.toString(),
         username: commenterName.value,
         comment: commenterMessage.value,
       };
 
-      postComment(newComment);
+      await postComment(newComment);
+      getComments(newsId.toString());
+      resetInputFields([commenterName, commenterMessage]);
     } else {
-      showMessage('All input field are required');
+      showMessage('All input fields are required');
     }
   });
 };
@@ -86,10 +88,16 @@ const renderModalContent = (data) => {
     <div class="my-5 md:my-8">
       <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">${data.content}</p>
     </div>
-    ${renderComments()}
+    <div class="my-5 md:my-8 pt-2 border-t-2 border-gray-200 comment-sections">
+      <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-500">
+        Comments (2)
+      </h4>
+      <div class="mt-5 md:mt-8 text-left mx-3 md:mx-5 lg:mx-10 text-sm md:text-lg text-gray-500 space-y-4"></div>
+    </div>
     ${renderCommentForm()}
   `;
   submitComment(data.id);
+  getComments(data.id.toString());
 };
 
 const modalTrigger = (element, data) => {

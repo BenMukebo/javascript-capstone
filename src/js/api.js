@@ -1,4 +1,4 @@
-import { renderNews, showMessage } from './dom.js';
+import { renderNews, renderComments, showMessage } from './dom.js';
 
 const url = 'https://api.spaceflightnewsapi.net/v3/articles';
 const involvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
@@ -23,6 +23,18 @@ export const postComment = async (data) => {
       if (response.status === 201) {
         showMessage('Comment posted successfully');
       }
+    })
+    .catch((error) => {
+      throw new Error(error);
+    });
+};
+
+export const getComments = async (incomingItemId) => {
+  await fetch(`${involvementApi}${commentsUrl}?item_id=${incomingItemId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      const commentsArray = data;
+      renderComments(commentsArray);
     })
     .catch((error) => {
       throw new Error(error);
