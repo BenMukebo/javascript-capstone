@@ -103,6 +103,7 @@ export const renderNews = (dataNews) => {
       const likeNumbers = li.querySelector('.like');
       // console.log(likeId, likeNumbers);
 
+      postLikes(likeId, likeNumbers);
       // window.location.reload();
     });
   });
