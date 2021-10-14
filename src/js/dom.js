@@ -1,5 +1,5 @@
 // import _ from 'lodash';
-import { postComment } from "./api.js";
+import { postComment } from './api.js';
 
 const popupModal = document.querySelector('.popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
@@ -64,7 +64,7 @@ const submitComment = (newsId) => {
         comment: commenterMessage.value,
       };
 
-      postComment(newComment)
+      postComment(newComment);
     } else {
       showMessage('All input field are required');
     }

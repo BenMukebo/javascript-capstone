@@ -19,7 +19,7 @@ export const postComment = async (data) => {
     },
     body: JSON.stringify(data),
   })
-    .then((response) =>{
+    .then((response) => {
       if (response.status === 201) {
         showMessage('Comment posted successfully');
       }
