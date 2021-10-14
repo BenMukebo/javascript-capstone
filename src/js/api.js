@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { renderNews } from './dom.js';
 
 const BASE_URL = 'https://api.spaceflightnewsapi.net/v3/articles';

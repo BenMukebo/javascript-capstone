@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { postLikes, getLikes } from './api.js';
+import involvement from './involement.js';
 
 const popupModal = document.querySelector('.popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
@@ -73,8 +74,9 @@ const modalTrigger = (element, data) => {
   btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
 };
 
-export const renderNews = (dataNews) => {
-  dataNews.forEach((data) => {
+export const renderNews = async (dataNews) => {
+  dataNews.forEach(async (data) => {
+    const likes = await getLikes().then((response) => involvement.likes(response, data.id));
     const li = document.createElement('li');
     li.classList.add('list-item', 'd-flex');
     li.innerHTML = `
@@ -87,7 +89,7 @@ export const renderNews = (dataNews) => {
           <button class="love" id=${data.id}>
             <span class="material-icons">favorite_border</span>
           </button>
-          <p><span class="like"></span> Likes</p>
+          <p><span class="like">${likes}</span> Likes</p>
         </div>
       </div>
       <div class="comntBtn">
@@ -97,14 +99,13 @@ export const renderNews = (dataNews) => {
     modalTrigger(li, data);
 
     const like = li.querySelector('.love');
-    // console.log(like);
-    like.addEventListener('click', () => {
-      const likeId = like.id;
-      const likeNumbers = li.querySelector('.like');
-      // console.log(likeId, likeNumbers);
+    const likeNumbers = li.querySelector('.like');
 
-      postLikes(likeId, likeNumbers);
-      // window.location.reload();
+    like.addEventListener('click', async () => {
+      await postLikes(data.id);
+      // eslint-disable-next-line max-len
+      const updatedLikes = await getLikes().then((response) => involvement.likes(response, data.id));
+      likeNumbers.innerText = updatedLikes;
     });
   });
 };
