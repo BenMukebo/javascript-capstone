@@ -1,10 +1,9 @@
 import { renderNews, renderComments, showMessage } from './dom.js';
 
+const BASE_URL = 'https://api.spaceflightnewsapi.net/v3/articles';
 const involvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const commentsUrl = '/apps/EXlTe26DlB9I8ip8IWwa/comments';
 const likesUrl = '/apps/EXlTe26DlB9I8ip8IWwa/likes';
-
-const BASE_URL = 'https://api.spaceflightnewsapi.net/v3/articles';
 
 export const getResponse = async () => {
   const get = await fetch(BASE_URL);
