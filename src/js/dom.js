@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-cycle
+import { postLikes, getLikes } from './api.js';
+
 const popupModal = document.querySelector('.popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
 const modalContentContainer = document.querySelector('.popup-modal-content-container');
@@ -81,10 +84,10 @@ export const renderNews = (dataNews) => {
       <div class="body d-flex">
         <h3>${data.title.slice(0, 60)}...</h3>
         <div class="like-news">
-          <button>
+          <button class="love" id=${data.id}>
             <span class="material-icons">favorite_border</span>
           </button>
-          <p><span data-id="likes"></span> Likes</p>
+          <p><span class="like"></span> Likes</p>
         </div>
       </div>
       <div class="comntBtn">
@@ -92,5 +95,15 @@ export const renderNews = (dataNews) => {
       </div>`;
     container.append(li);
     modalTrigger(li, data);
+
+    const like = li.querySelector('.love');
+    // console.log(like);
+    like.addEventListener('click', () => {
+      const likeId = like.id;
+      const likeNumbers = li.querySelector('.like');
+      // console.log(likeId, likeNumbers);
+
+      // window.location.reload();
+    });
   });
 };
