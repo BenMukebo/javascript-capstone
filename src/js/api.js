@@ -19,7 +19,7 @@ export const postLikes = async (id, numbers) => {
     },
   });
   const response = await post.text();
-  console.log(response);
+  // console.log(response);
   getLikes(id, numbers);
   return response;
 };
@@ -30,5 +30,11 @@ export const getLikes = async (idLike, numberLikes) => {
   const put = await fetch(api);
   const response = await put.json();
   // console.log(idLike, numberLikes);
+
+  response.forEach((element) => {
+    if (element.item_id === idLike.toString()) {
+      // console.log(element);
+      numberLikes.innerHTML = element.likes;
+    }
   });
 };
