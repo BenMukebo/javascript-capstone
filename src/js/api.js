@@ -20,8 +20,15 @@ export const postLikes = async (id, numbers) => {
   });
   const response = await post.text();
   console.log(response);
+  getLikes(id, numbers);
   return response;
 };
 
 // postLikes(4);
 
+export const getLikes = async (idLike, numberLikes) => {
+  const put = await fetch(api);
+  const response = await put.json();
+  // console.log(idLike, numberLikes);
+  });
+};
