@@ -45,7 +45,7 @@ const renderCommentForm = () => `
       <p id="alertMessage">Message: </p>
       <input type="text" id="commenterName" placeholder="Your name" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400" />
       <textarea type="text" id="commenterMessage" placeholder="Your insights" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"></textarea>
-      <button class="bg-transparent focus:outline-none border border-2 border-blue-400 hover:bg-blue-500 hover:text-white text-gray-500 w-32 h-10 rounded-tr-full rounded-bl-full shadow-3xl my-3 submit-comment" type="button">Comment</button>
+      <button class="bg-transparent focus:outline-none hover:text-white text-gray-500 w-32 h-10 rounded-tr-full rounded-bl-full shadow-3xl my-3 submit-comment" type="button">Comment</button>
     </form>
   </div>
 `;
@@ -138,14 +138,14 @@ export const renderNews = async (dataNews) => {
       <div class="body d-flex">
         <h3>${data.title.slice(0, 60)}...</h3>
         <div class="like-news">
-          <button class="love" id=${data.id}>
+          <button class="love focus:outline-none" id=${data.id}>
             <span class="material-icons">favorite_border</span>
           </button>
           <p><span class="like">${likes}</span> Likes</p>
         </div>
       </div>
       <div class="comntBtn">
-        <button class="item-comment-button">Comment</button>
+      <button class="bg-transparent focus:outline-none hover:text-white text-gray-500 w-32 h-10 rounded-tr-full rounded-bl-full shadow-3xl my-3 submit-comment" type="button">Comments</button>
       </div>`;
     container.append(li);
     modalTrigger(li, data);
