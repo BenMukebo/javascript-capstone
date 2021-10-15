@@ -22,7 +22,7 @@ export const postComment = async (data) => {
   })
     .then((response) => {
       if (response.status === 201) {
-        showMessage('Comment posted successfully');
+        showMessage('Comment posted successfully', 'success');
       }
     })
     .catch((error) => {

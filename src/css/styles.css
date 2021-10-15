@@ -34,6 +34,13 @@ footer {
   background-color: #735f7b;
 }
 
+input:focus,
+textarea:focus {
+  outline-color: var(--secondary);
+  outline-width: 3px;
+  border: 2px solid var(--secondary);
+}
+
 section .lists {
   width: 100%;
   flex-direction: column;
@@ -44,7 +51,7 @@ section .list-item {
   flex-direction: column;
   max-width: 440px;
   padding: 1rem;
-  margin: 10px;
+  margin: 5px;
   border-radius: 10px;
   box-shadow: 0 0 10px 1px rgb(165, 165, 165);
   background-color: var(--background);
@@ -87,6 +94,25 @@ section .list-item {
   color: var(--secondary);
 }
 
+.message-box {
+  margin: 3% 0 0 0;
+  padding: 2%;
+  border-radius: 5px;
+  display: block;
+}
+
+.success-message {
+  background-color: rgb(198, 248, 198);
+  color: rgb(5, 107, 5);
+  border: 1px solid rgb(6, 185, 6);
+}
+
+.error-message {
+  background-color: rgb(255, 198, 198);
+  color: rgb(156, 49, 30);
+  border: 1px solid rgb(156, 49, 30);
+}
+
 @media (min-width: 768px) {
   .md-h-30 {
     height: 30rem;
@@ -103,7 +129,7 @@ section .list-item {
     flex-direction: column;
     max-width: 370px;
     height: 400px;
-    margin: 20px;
+    margin: 10px;
   }
 
   .list-item .image {
