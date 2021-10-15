@@ -20,7 +20,7 @@ Test Covereage                                                                  
 ![](./src/assets/images/test-coverage.png)                                                                                               |
 
 ## Online version
-Coming soon...
+[Demo](https://benmukebo.github.io/javascript-capstone/)
 
 ## Link to video
 [Project explanation video](https://drive.google.com/file/d/1KPlcbsX3nQ8DPLIQ3ErletsJrqsyMWIF/view?usp=sharing)
