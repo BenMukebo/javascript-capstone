@@ -1,6 +1,6 @@
 # Modern Technology News
 
-> The name of the project is called **Modern Technology News (MoTech News)**. MoTech News reads data from [Inshortsapi API service.](https://inshortsapi.vercel.app/news?category=technology) to get updated news and populate them on the website. The application also leverage the [Involvement API Service](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270) in order to allow users to leave comments and likes for a particular news.
+> The name of the project is called **Modern Technology News (MoTech News)**. MoTech News reads data from [Spaceflights API service.](https://api.spaceflightnewsapi.net/v3/documentation#) to get updated news and populate them on the website. The application also leverage the [Involvement API Service](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270) in order to allow users to leave comments and likes for a particular news.
 
 Gif Demo                                                                                                                                 |
 :---------------------------------------------------------------------------------------------------------------------------------------:|
