@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/jpg" href="./assets/images/favicon.png"/> 
+    <title>MoTech News</title>
+  </head>
+  <body>
+    <header class="">
+      <nav
+        class="
+          flex
+          text-sm
+          md:text-lg
+          p-5
+          md:p-7
+          justify-center
+          items-center
+          space-x-20
+          md:space-x-64
+          text-white
+        "
+      >
+        <div class="main-logo flex items-center">
+          <a href="#" class="logo mr-5"><img src="./assets/images/logo_transparent.png" alt=""></a>
+          <a href="#" class="mr-2 md:mr-0">MoTech News <span class="counter"></span></a>
+        </div>
+        <ul class="flex space-x-3 md:space-x-10">
+          <li>Technology</li>
+          <li>Science</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home">
+        <ul class="lists d-flex"></ul>
+      </section>
+
+      <!-- popup modal -->
+      <div
+        class="popup-modal hidden fixed z-10 inset-0 overflow-y-auto"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div
+          class="
+            flex
+            items-end
+            justify-center
+            min-h-screen
+            pt-4
+            px-4
+            pb-20
+            text-center
+            sm:block sm:p-0
+          "
+        >
+          <div
+            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+            aria-hidden="true"
+          ></div>
+
+          <!-- makes the modal center -->
+          <span
+            class="hidden sm:inline-block sm:align-middle sm:h-screen"
+            aria-hidden="true"
+            >&#8203;</span>
+
+          <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:p-6 md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
+            <div class="absolute top-0 right-0 pt-4 pr-4 mt-3 pl-5">
+              <!-- close modal button -->
+              <button type="button" class="btn-close-popup-modal bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- modal content section -->
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 popup-modal-content-container"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="p-5 md:p-10 text-center md:text-left text-white">
+      <p class="text-sm md:text-lg pl-5 md:pl-10">
+        Created by Microvse under CC license
+      </p>
+    </footer>
+  </body>
+</html>
