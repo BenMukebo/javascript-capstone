@@ -22,6 +22,9 @@ Test Covereage                                                                  
 ## Online version
 Coming soon...
 
+## Link to video
+[Project explanation video](https://drive.google.com/file/d/1KPlcbsX3nQ8DPLIQ3ErletsJrqsyMWIF/view?usp=sharing)
+
 ## Built With
 
 - HTML / CSS / JAVASCRIPT / WEBPACK
