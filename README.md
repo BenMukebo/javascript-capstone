@@ -2,6 +2,10 @@
 
 > The name of the project is called **Modern Technology News (MoTech News)**. MoTech News reads data from [Inshortsapi API service.](https://inshortsapi.vercel.app/news?category=technology) to get updated news and populate them on the website. The application also leverage the [Involvement API Service](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270) in order to allow users to leave comments and likes for a particular news.
 
+Test Covereage                                                                                       |
+:---------------------------------------------------------------------------------------------------:|
+![](./src/assets/images/test-coverage.png)                                                                           |
+
 ## Online version
 Coming soon...
 
@@ -14,6 +18,12 @@ Coming soon...
 - Skip if you already have node installed otherwise download [nodejs](https://nodejs.org/en/download/) install it on your system
 - Install the node modules: ```npm install```
 - Run the app: ```npm start``` or ```yarn start```
+
+## How to run the tests
+- Clone the project: ```https://github.com/BenMukebo/javascript-capstone.git```
+- Skip if you already have node installed otherwise download [nodejs](https://nodejs.org/en/download/) install it on your system
+- Install the node modules: ```npm install```
+- Run the tests: ```npm test```
 
 ## Author
 
@@ -41,5 +51,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - microverseinc for the readme template
-- [Inshortsapi API service.](https://github.com/cyberboysumanjay/Inshorts-News-API)
+- [Spaceflights API service.](https://api.spaceflightnewsapi.net/v3/documentation#)
 - [Involvement API Service](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270)
