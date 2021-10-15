@@ -62,7 +62,7 @@ const renderCommentForm = () => `
       <p id="alertMessage" class="message-box"></p>
       <input type="text" id="commenterName" placeholder="Your name" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none" />
       <textarea type="text" id="commenterMessage" placeholder="Your insights" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none"></textarea>
-      <button class="bg-transparent focus:outline-none hover:text-white text-gray-500 w-32 h-10 rounded-tr-full rounded-bl-full shadow-3xl my-3 submit-comment" type="button">Comment</button>
+      <button class="bg-transparent focus:outline-none hover:text-white text-gray-500 w-32 h-10 rounded-tr-full rounded-bl-full shadow-3xl my-3 submit-comment" type="submit">Comment</button>
     </form>
   </div>
 `;
@@ -77,9 +77,8 @@ const submitComment = (newsId) => {
   const form = document.querySelector('form');
   const commenterName = form.childNodes[3];
   const commenterMessage = form.childNodes[5];
-  const formButton = form.childNodes[7];
 
-  formButton.addEventListener('click', async (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (commenterName.value && commenterMessage.value !== '') {
       const newComment = {
