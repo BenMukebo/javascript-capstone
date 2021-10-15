@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" type="image/jpg" href="./assets/images/favicon.png"/> 
     <title>MoTech News</title>
   </head>
   <body>
@@ -21,14 +22,18 @@
           text-sm
           md:text-lg
           p-5
-          md:p-8
+          md:p-7
           justify-center
+          items-center
           space-x-20
           md:space-x-64
           text-white
         "
       >
-        <a href="#" class="mr-2 md:mr-0">MoTech News <span class="counter"></span></a>
+        <div class="main-logo flex items-center">
+          <a href="#" class="logo mr-5"><img src="./assets/images/logo_transparent.png" alt=""></a>
+          <a href="#" class="mr-2 md:mr-0">MoTech News <span class="counter"></span></a>
+        </div>
         <ul class="flex space-x-3 md:space-x-10">
           <li>Technology</li>
           <li>Science</li>

@@ -46,6 +46,8 @@ Test Covereage                                                                  
 👤 **Ben Mukebo**
 
 - GitHub: [@BenMukebo](https://github.com/BenMukebo)
+- Twitter [@BenMukebo](https://twitter.com/BenMukebo)
+- LinkedIn [BenMukebo](https://www.linkedin.com/in/kasongo-mukebo-ben-591720205/)
 
 ## Collaborator
 
