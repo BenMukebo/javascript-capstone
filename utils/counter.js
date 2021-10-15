@@ -5,3 +5,9 @@ export const getCommentsCount = (itemId) => {
     return response.data;
   });
 };
+
+export const getItemsCount = () => {
+  return fetch().then((response) => {
+    return response.data;
+  });
+};
