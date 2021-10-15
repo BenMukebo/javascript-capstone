@@ -7,9 +7,6 @@ const popupModal = document.querySelector('.popup-modal');
 const btnClosePopupModal = document.querySelector('.btn-close-popup-modal');
 const modalContentContainer = document.querySelector('.popup-modal-content-container');
 const container = document.querySelector('.lists');
-const dateOptions = {
-  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-};
 
 export const showMessage = (message) => {
   const form = document.querySelector('form');
@@ -19,10 +16,8 @@ export const showMessage = (message) => {
 
 export const renderComments = (commentsArray) => {
   if (commentsArray && commentsArray.length > 0) {
-    const commentsCounterDiv = modalContentContainer.childNodes[9].childNodes[1];
     const commentsSection = modalContentContainer.childNodes[9].childNodes[3];
     commentsSection.innerHTML = '';
-    commentsCounterDiv.innerHTML = `Comments (${commentsArray.length})`;
 
     commentsArray.forEach((object) => {
       commentsSection.innerHTML += `<div class="flex flex-wrap justify-start">
@@ -41,7 +36,7 @@ const renderCommentForm = () => `
     <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-500">
       Add a comment
     </h4>
-    <form action="#" method="POST" class="flex flex-col bg-gray-300 px-8 md:px-10 lg:px-48 xl:px-64 md:pt-5">
+    <form action="#" method="POST" class="flex flex-col bg-gray-200 px-8 md:px-32 lg:px-52 xl:px-64 md:pt-5">
       <p id="alertMessage">Message: </p>
       <input type="text" id="commenterName" placeholder="Your name" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400" />
       <textarea type="text" id="commenterMessage" placeholder="Your insights" class="p-3 my-3 rounded-md shadow-3xl border border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"></textarea>
@@ -81,9 +76,6 @@ const submitComment = (newsId) => {
 };
 
 const renderModalContent = (data) => {
-  const formattedDate = new Date(data.publishedAt).toLocaleString('en', dateOptions);
-  const formattedTime = new Date(data.publishedAt).toLocaleTimeString('en', { timeStyle: 'short' });
-
   modalContentContainer.innerHTML = `
     <div class="mx-7 mb-8 bg-blue-400 md-h-30 overflow-hidden">
       <img src="${data.imageUrl}" alt="placeholder 2" class="w-full h-full">
@@ -92,15 +84,16 @@ const renderModalContent = (data) => {
       ${data.title}
     </h3>
     <div class="mt-5 md:mt-8 pb-2 border-b-2 border-gray-300 md:mx-7">
-      <p class="text-sm md:text-lg md:text-left text-gray-500">Author: ${data.newsSite}</p>
-      <p class="text-sm md:text-lg md:text-left text-gray-500">
-      Date: ${formattedDate} at ${formattedTime}</p>
+      <p class="text-sm md:text-lg md:text-left text-gray-500">Author: ${data.author}</p>
+      <p class="text-sm md:text-lg md:text-left text-gray-500">Date: ${data.date} at ${data.time}</p>
     </div>
     <div class="my-5 md:my-8">
-      <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">${data.summary}</p>
+      <p class="text-sm md:text-lg text-gray-500 text-justify md:mx-7">${data.content}</p>
     </div>
     <div class="my-5 md:my-8 pt-2 border-t-2 border-gray-200 comment-sections">
-      <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-500"></h4>
+      <h4 class="mt-5 text-lg md:text-2xl leading-6 font-medium text-gray-500">
+        Comments (2)
+      </h4>
       <div class="mt-5 md:mt-8 text-left mx-3 md:mx-5 lg:mx-10 text-sm md:text-lg text-gray-500 space-y-4"></div>
     </div>
     ${renderCommentForm()}
@@ -118,6 +111,13 @@ const modalTrigger = (element, data) => {
   });
 
   btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
+};
+
+const counter = document.querySelector('.counter');
+
+const itemsCounter = (number) => {
+  // console.log(number);
+  counter.innerText = `( ${number} )`;
 };
 
 export const renderNews = async (dataNews) => {
@@ -154,4 +154,5 @@ export const renderNews = async (dataNews) => {
       likeNumbers.innerText = updatedLikes;
     });
   });
+  itemsCounter(dataNews.length);
 };
