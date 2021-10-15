@@ -120,6 +120,12 @@ const modalTrigger = (element, data) => {
   btnClosePopupModal.addEventListener('click', () => popupModal.classList.add('hidden'));
 };
 
+const counter = document.querySelector('.counter');
+
+const itemsCounter = (number) => {
+  counter.innerText = `( ${number} )`;
+};
+
 export const renderNews = async (dataNews) => {
   dataNews.forEach(async (data) => {
     const likes = await getLikes().then((response) => involvement.likes(response, data.id));
@@ -154,4 +160,5 @@ export const renderNews = async (dataNews) => {
       likeNumbers.innerText = updatedLikes;
     });
   });
+  itemsCounter(dataNews.length);
 };
